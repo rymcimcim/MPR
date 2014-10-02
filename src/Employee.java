@@ -1,0 +1,33 @@
+
+public class Employee {
+	
+	private float salary;
+	private float bonus;
+	private String workplace;
+	private Person person;
+	
+	public float getSalary() {
+		return salary;
+	}
+	public void setSalary(float salary) {
+		this.salary = salary;
+	}
+	public float getBonus() {
+		return bonus;
+	}
+	public void setBonus(float bonus) {
+		this.bonus = bonus;
+	}
+	public String getWorkplace() {
+		return workplace;
+	}
+	public void setWorkplace(String workplace) {
+		this.workplace = workplace;
+	}
+	public Person getPerson() {
+		return person;
+	}
+	public void setPerson(Person person) {
+		this.person = person;
+	} 
+}
