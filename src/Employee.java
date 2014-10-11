@@ -3,7 +3,7 @@ public class Employee {
 	
 	private float salary;
 	private float bonus;
-	private String workplace;
+	private Warehouse workplace;
 	private Person person;
 	
 	public float getSalary() {
@@ -18,10 +18,10 @@ public class Employee {
 	public void setBonus(float bonus) {
 		this.bonus = bonus;
 	}
-	public String getWorkplace() {
+	public Warehouse getWorkplace() {
 		return workplace;
 	}
-	public void setWorkplace(String workplace) {
+	public void setWorkplace(Warehouse workplace) {
 		this.workplace = workplace;
 	}
 	public Person getPerson() {
