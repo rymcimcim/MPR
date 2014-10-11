@@ -6,6 +6,9 @@ public class Employee {
 	private Warehouse workplace;
 	private Person person;
 	
+	public Employee() {
+		this.workplace = new Warehouse();
+	}
 	public float getSalary() {
 		return salary;
 	}
