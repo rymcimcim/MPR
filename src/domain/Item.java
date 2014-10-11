@@ -1,12 +1,17 @@
+package domain;
+
 
 public class Item {
 	
 	private String name;
 	private int itemId;
-	private String fromWhere;
+	private Warehouse warehouse;
 	private float cost;
 	private String material;
 	
+	public Item() {
+		this.warehouse = new Warehouse();
+	}
 	public String getName() {
 		return name;
 	}
@@ -19,11 +24,11 @@ public class Item {
 	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
-	public String getFromWhere() {
-		return fromWhere;
+	public Warehouse getFromWhere() {
+		return warehouse;
 	}
-	public void setFromWhere(String fromWhere) {
-		this.fromWhere = fromWhere;
+	public void setFromWhere(Warehouse fromWhere) {
+		this.warehouse = fromWhere;
 	}
 	public float getCost() {
 		return cost;
