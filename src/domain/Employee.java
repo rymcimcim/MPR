@@ -1,7 +1,7 @@
 package domain;
 
 
-public class Employee {
+public class Employee extends Entity{
 	
 	private float salary;
 	private float bonus;

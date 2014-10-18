@@ -1,21 +1,38 @@
 package domain;
-import java.util.List;
 
+import java.util.*;
 
-public class Role {
-	
+public class Role extends Entity  {
+
 	private String name;
-	private List<Privilage> privilage;
+	private List<Privilege> privilege;
+	private List<Employee> employees;
+	
+	public Role()
+	{
+		privilege = new ArrayList<Privilege>();
+		employees = new ArrayList<Employee>();
+	}
+	
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<Privilage> getPrivilage() {
-		return privilage;
+	public List<Privilege> getPrivilege() {
+		return privilege;
 	}
-	public void setPrivilage(List<Privilage> privilage) {
-		this.privilage = privilage;
+	public void setPrivilege(List<Privilege> privilege) {
+		this.privilege = privilege;
 	}
+	public List<Employee> getUsers() {
+		return employees;
+	}
+	public void setUsers(List<Employee> users) {
+		this.employees = users;
+	}
+	
+	
+	
 }

@@ -1,18 +1,18 @@
 package domain;
-import java.util.ArrayList;
-import java.util.List;
 
+import java.util.*;
 
-public class Privilage {
+public class Privilege extends Entity  {
 
 	private String name;
 	
 	private List<Role> roles;
-	
-	public Privilage() {
-		roles = new ArrayList<>();
-	}
 
+	public Privilege()
+	{
+		roles = new ArrayList<Role>();
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -28,4 +28,5 @@ public class Privilage {
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
+	
 }
