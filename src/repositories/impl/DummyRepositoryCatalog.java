@@ -8,7 +8,7 @@ public class DummyRepositoryCatalog implements IRepositoryCatalog{
 	DummyDb db = new DummyDb();
 	
 	@Override
-	public IEmployeeRepository getUsers() {
+	public IEmployeeRepository getEmployees() {
 		return new DummyEmployeeRepository(db);
 	}
 
