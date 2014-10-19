@@ -10,7 +10,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		IRepositoryCatalog catalog = new DummyRepositoryCatalog();
-		List<Employee> admins = catalog.getUsers().withRole("administrator");
+		List<Employee> admins = catalog.getEmployees().withRole("administrator");
 
 	}
 

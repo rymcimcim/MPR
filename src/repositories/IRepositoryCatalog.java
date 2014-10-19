@@ -2,5 +2,5 @@ package repositories;
 
 public interface IRepositoryCatalog {
 
-	public IEmployeeRepository getUsers();
+	public IEmployeeRepository getEmployees();
 }
