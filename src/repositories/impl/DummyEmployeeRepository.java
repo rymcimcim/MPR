@@ -11,8 +11,6 @@ public class DummyEmployeeRepository implements IEmployeeRepository {
 
 	private DummyDb db;
 	
-	
-	
 	public DummyEmployeeRepository(DummyDb db) {
 		super();
 		this.db = db;
