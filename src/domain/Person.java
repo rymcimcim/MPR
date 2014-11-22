@@ -2,7 +2,7 @@ package domain;
 import java.util.ArrayList;
 
 
-public class Person {
+public class Person extends Entity{
 	
 	private String name;
 	private String surname;

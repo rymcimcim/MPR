@@ -1,21 +1,23 @@
 package domain;
 
+import java.util.List;
 
-public class Employee extends Entity{
+
+public class Employee extends Person{
 	
-	private float salary;
+	private String salary;
 	private float bonus;
-	private Warehouse workplace;
+	private String workplace;
 	private Person person;
 	
-	public Employee() {
-		this.workplace = new Warehouse();
+	public Employee(String workplace) {
+		this.workplace = workplace;
 	}
-	public float getSalary() {
+	public String getSalary() {
 		return salary;
 	}
-	public void setSalary(float salary) {
-		this.salary = salary;
+	public void setSalary(String string) {
+		this.salary = string;
 	}
 	public float getBonus() {
 		return bonus;
@@ -23,16 +25,21 @@ public class Employee extends Entity{
 	public void setBonus(float bonus) {
 		this.bonus = bonus;
 	}
-	public Warehouse getWorkplace() {
+	public String getWorkplace() {
 		return workplace;
 	}
-	public void setWorkplace(Warehouse workplace) {
-		this.workplace = workplace;
+	public void setWorkplace(String string) {
+		this.workplace = string;
 	}
 	public Person getPerson() {
 		return person;
 	}
 	public void setPerson(Person person) {
 		this.person = person;
+	}
+	
+	public void add(List<Employee> result) {
+		// TODO Auto-generated method stub
+		
 	} 
 }
