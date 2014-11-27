@@ -7,12 +7,12 @@ public class Person extends Entity{
 	private String name;
 	private String surname;
 	private String pesel;
-	private ArrayList<Address> address;
+	private ArrayList<Address> addresses;
 	
 	private Employee employee;
 	
 	public Person() {
-		this.address = new ArrayList<Address>();
+		this.addresses = new ArrayList<Address>();
 	}
 
 	public String getName() {
@@ -40,11 +40,11 @@ public class Person extends Entity{
 	}
 
 	public ArrayList<Address> getAddress() {
-		return address;
+		return addresses;
 	}
 
 	public void setAddress(ArrayList<Address> address) {
-		this.address = address;
+		this.addresses = address;
 	}
 
 	public Employee getEmployee() {

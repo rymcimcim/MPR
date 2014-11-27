@@ -2,7 +2,9 @@ package repositories;
 
 import java.util.List;
 
-public interface IRepository<TEntity> {
+import domain.Entity;
+
+public interface IRepository<TEntity extends Entity> {
 
 	public void save(TEntity entity);
 	public void update(TEntity entity);
