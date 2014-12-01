@@ -9,6 +9,14 @@ public class Address {
 	private String houseNumber;
 	private String localNumber;
 	
+	private Person person;
+	
+	public Person getPerson() {
+		return person;
+	}
+	public void setPerson(Person person) {
+		this.person = person;
+	}
 	public String getCountry() {
 		return country;
 	}

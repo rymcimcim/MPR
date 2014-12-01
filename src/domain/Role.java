@@ -26,11 +26,11 @@ public class Role extends Entity  {
 	public void setPrivilege(List<Privilege> privilege) {
 		this.privilege = privilege;
 	}
-	public List<Employee> getUsers() {
+	public List<Employee> getEmployees() {
 		return employees;
 	}
-	public void setUsers(List<Employee> users) {
-		this.employees = users;
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
 	}
 	
 	

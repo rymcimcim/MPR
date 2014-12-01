@@ -5,11 +5,11 @@ public class Employee extends Entity{
 	
 	private float salary;
 	private float bonus;
-	private Warehouse workplace;
+	private Workplace workplace;
 	private Person person;
 	
 	public Employee() {
-		this.workplace = new Warehouse();
+		this.workplace = new Workplace();
 	}
 	public float getSalary() {
 		return salary;
@@ -23,10 +23,10 @@ public class Employee extends Entity{
 	public void setBonus(float bonus) {
 		this.bonus = bonus;
 	}
-	public Warehouse getWorkplace() {
+	public Workplace getWorkplace() {
 		return workplace;
 	}
-	public void setWorkplace(Warehouse workplace) {
+	public void setWorkplace(Workplace workplace) {
 		this.workplace = workplace;
 	}
 	public Person getPerson() {

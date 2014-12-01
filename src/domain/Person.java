@@ -2,17 +2,19 @@ package domain;
 import java.util.ArrayList;
 
 
-public class Person {
-	
+public class Person extends Entity{
+
 	private String name;
 	private String surname;
 	private String pesel;
+	private ArrayList<Workplace> workplaces;
 	private ArrayList<Address> address;
 	
 	private Employee employee;
 	
 	public Person() {
 		this.address = new ArrayList<Address>();
+		this.workplaces = new ArrayList<Workplace>();
 	}
 
 	public String getName() {
@@ -53,5 +55,12 @@ public class Person {
 
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
+	}
+	public ArrayList<Workplace> getWorkplaces() {
+		return workplaces;
+	}
+
+	public void setWorkplaces(ArrayList<Workplace> workplaces) {
+		this.workplaces = workplaces;
 	}
 }

@@ -1,16 +1,17 @@
 package domain;
 
+import java.util.ArrayList;
 
-public class Item {
+
+public class Item extends Entity{
 	
 	private String name;
-	private int itemId;
-	private Warehouse warehouse;
+	private ArrayList<Workplace> workplace;
 	private float cost;
 	private String material;
 	
 	public Item() {
-		this.warehouse = new Warehouse();
+		this.workplace = new ArrayList<Workplace>();
 	}
 	public String getName() {
 		return name;
@@ -18,17 +19,11 @@ public class Item {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getItemId() {
-		return itemId;
+	public ArrayList<Workplace> getWorkplace() {
+		return workplace;
 	}
-	public void setItemId(int itemId) {
-		this.itemId = itemId;
-	}
-	public Warehouse getFromWhere() {
-		return warehouse;
-	}
-	public void setFromWhere(Warehouse fromWhere) {
-		this.warehouse = fromWhere;
+	public void setWorkplace(ArrayList<Workplace> fromWhere) {
+		this.workplace = fromWhere;
 	}
 	public float getCost() {
 		return cost;

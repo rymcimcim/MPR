@@ -54,7 +54,7 @@ public class DummyEmployeeRepository implements IEmployeeRepository {
 
 		for(Role r: db.roles)
 			if(r.getName()==roleName)
-				return r.getUsers();
+				return r.getEmployees();
 		return new ArrayList<Employee>();
 	}
 
@@ -63,7 +63,7 @@ public class DummyEmployeeRepository implements IEmployeeRepository {
 		
 		for(Role r: db.roles)
 			if(r.getId()==roleId)
-				return r.getUsers();
+				return r.getEmployees();
 		return new ArrayList<Employee>();
 	}
 
