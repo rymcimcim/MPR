@@ -3,18 +3,30 @@ import java.util.ArrayList;
 
 
 public class Person extends Entity{
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> refs/remotes/origin/master
 	private String name;
 	private String surname;
 	private String pesel;
+<<<<<<< HEAD
 	private ArrayList<Workplace> workplaces;
 	private ArrayList<Address> address;
+=======
+	private ArrayList<Address> addresses;
+>>>>>>> refs/remotes/origin/master
 	
 	private Employee employee;
 	
 	public Person() {
+<<<<<<< HEAD
 		this.address = new ArrayList<Address>();
 		this.workplaces = new ArrayList<Workplace>();
+=======
+		this.addresses = new ArrayList<Address>();
+>>>>>>> refs/remotes/origin/master
 	}
 
 	public String getName() {
@@ -42,11 +54,11 @@ public class Person extends Entity{
 	}
 
 	public ArrayList<Address> getAddress() {
-		return address;
+		return addresses;
 	}
 
 	public void setAddress(ArrayList<Address> address) {
-		this.address = address;
+		this.addresses = address;
 	}
 
 	public Employee getEmployee() {
