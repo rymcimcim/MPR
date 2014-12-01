@@ -3,30 +3,19 @@ import java.util.ArrayList;
 
 
 public class Person extends Entity{
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> refs/remotes/origin/master
 	private String name;
 	private String surname;
 	private String pesel;
-<<<<<<< HEAD
 	private ArrayList<Workplace> workplaces;
-	private ArrayList<Address> address;
-=======
 	private ArrayList<Address> addresses;
->>>>>>> refs/remotes/origin/master
 	
 	private Employee employee;
 	
 	public Person() {
-<<<<<<< HEAD
-		this.address = new ArrayList<Address>();
-		this.workplaces = new ArrayList<Workplace>();
-=======
 		this.addresses = new ArrayList<Address>();
->>>>>>> refs/remotes/origin/master
+		this.workplaces = new ArrayList<Workplace>();
+		this.addresses = new ArrayList<Address>();
 	}
 
 	public String getName() {

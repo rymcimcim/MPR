@@ -6,51 +6,34 @@ import java.util.List;
 
 public class Employee extends Entity{
 	
-<<<<<<< HEAD
+
 	private float salary;
 	private float bonus;
 	private Workplace workplace;
-=======
-	private String salary;
-	private String bonus;
-	private String workplace;
->>>>>>> refs/remotes/origin/master
 	private Person person;
 	private List<Role> roles;
 	
 	public Employee() {
-<<<<<<< HEAD
-		this.workplace = new Workplace();
-=======
 		roles = new ArrayList<Role>();
->>>>>>> refs/remotes/origin/master
 	}
-	public String getSalary() {
+	public float getSalary() {
 		return salary;
 	}
-	public void setSalary(String string) {
+	public void setSalary(float string) {
 		this.salary = string;
 	}
-	public String getBonus() {
+	public float getBonus() {
 		return bonus;
 	}
-	public void setBonus(String bonus) {
+	public void setBonus(float bonus) {
 		this.bonus = bonus;
 	}
-<<<<<<< HEAD
 	public Workplace getWorkplace() {
-=======
-	public String getWorkplace() {
->>>>>>> refs/remotes/origin/master
 		return workplace;
 	}
-<<<<<<< HEAD
 	public void setWorkplace(Workplace workplace) {
 		this.workplace = workplace;
-=======
-	public void setWorkplace(String string) {
-		this.workplace = string;
->>>>>>> refs/remotes/origin/master
+
 	}
 	public Person getPerson() {
 		return person;

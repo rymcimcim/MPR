@@ -3,6 +3,7 @@ import java.sql.DriverManager;
 import java.util.List;
 
 import repositories.IRepository;
+import repositories.impl.EmployeeBuilder;
 import repositories.impl.EmployeeRepository;
 import domain.Employee;
 
@@ -13,11 +14,12 @@ public class Main {
 		
 			
 			Employee jnowak = new Employee();
-			jnowak.setWorkplace("magazyn");
-			jnowak.setSalary("2000");
+			jnowak.setBonus(200);
+			jnowak.setSalary(2000);
 			
 			try 
 			{
+				EmployeeBuilder ebuilder = new EmployeeBuilder();
 				Connection connection = DriverManager.getConnection(url);
 				/*
 				  String createTable =
@@ -30,18 +32,18 @@ public class Main {
 				Statement stmt = connection.createStatement();
 				stmt.executeUpdate(createTable);
 				*/
-				IRepository<Employee> employees = new EmployeeRepository(connection);
+				IRepository<Employee> employees = new EmployeeRepository(connection, ebuilder);
 				employees.save(jnowak);
 				List<Employee> EmployeesFromDb = employees.getAll();
 				
 				for(Employee EmployeeFromDb : EmployeesFromDb)
-					System.out.println(EmployeeFromDb.getId()+" "+EmployeeFromDb.getWorkplace()+" "+EmployeeFromDb.getSalary());
+					System.out.println(EmployeeFromDb.getId()+" "+EmployeeFromDb.getBonus()+" "+EmployeeFromDb.getSalary());
 				Employee employee = employees.get(1);
-				employee.setSalary("2000");
+				employee.setSalary(2000);
 				employees.update(employee);
 				employees.delete(EmployeesFromDb.get(0));
 				for(Employee EmployeeFromDb : employees.getAll())
-					System.out.println(EmployeeFromDb.getId()+" "+EmployeeFromDb.getWorkplace()+" "+EmployeeFromDb.getSalary());
+					System.out.println(EmployeeFromDb.getId()+" "+EmployeeFromDb.getBonus()+" "+EmployeeFromDb.getSalary());
 				
 				
 			} catch (Exception e) {
