@@ -12,7 +12,7 @@ import domain.Employee;
 public class Main {
 		
 		public static void main(String[] args) {
-			String url ="jdbc:hsqldb:hsql://localhost/";
+			String url ="jdbc:hsqldb:hsql://localhost:9001/workdb";
 		
 			
 			Employee jnowak = new Employee();
