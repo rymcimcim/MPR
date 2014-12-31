@@ -3,18 +3,14 @@ package repositories.impl;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import unitofwork.IUnitOfWork;
 import domain.Item;
 
 public class ItemRepository extends Repository<Item>{
 	
-	private String insertSql=
-			"INSERT INTO item(name,cost,material) VALUES(?,?,?)";
-	
-	private String updateSql=
-			"UPDATE item SET (name,cost,material)=(?,?,?) WHERE id=?";
 
-	public ItemRepository(Connection connection, IEntityBuilder<Item> builder) {
-		super(connection, builder);
+	public ItemRepository(Connection connection, IEntityBuilder<Item> builder, IUnitOfWork uow) {
+		super(connection, builder, uow);
 	}
 
 	@Override
@@ -40,12 +36,13 @@ public class ItemRepository extends Repository<Item>{
 
 	@Override
 	protected String getInsertQuery() {
-		return insertSql;
+		return "insert into items(name,material,cost) values(?,?,?)";
 	}
 
 	@Override
 	protected String getUpdateQuery() {
-		return updateSql;
+		return "update items set (name,material,cost)=(?,?,?)"
+				+ "where id=?";
 	}
 
 }

@@ -3,24 +3,20 @@ package repositories.impl;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import unitofwork.IUnitOfWork;
 import domain.Employee;
 
 public class EmployeeRepository extends Repository<Employee>{
 
-	private String insertSql=
-			"INSERT INTO employee(salary,bonus) VALUES(?,?)";
-	
-	private String updateSql=
-			"UPDATE employee SET (salary,bonus)=(?,?) WHERE id=?";
-	
 	public EmployeeRepository(Connection connection,
-			IEntityBuilder<Employee> builder) {
-		super(connection, builder);	
+			IEntityBuilder<Employee> builder, IUnitOfWork uow) {
+		super(connection, builder, uow);	
 	}
 	@Override
 	protected void setUpUpdateQuery(Employee entity) throws SQLException {
 		update.setFloat(1, entity.getSalary());
 		update.setFloat(2, entity.getBonus());
+		update.setInt(3, entity.getId());
 	}
 
 	@Override
@@ -36,12 +32,13 @@ public class EmployeeRepository extends Repository<Employee>{
 
 	@Override
 	protected String getInsertQuery() {
-		return insertSql;
+		return "insert into emploee(salary,bonus) values(?,?)";
 	}
 
 	@Override
 	protected String getUpdateQuery() {
-		return updateSql;
+		return "update employee set (salary,bonus)=(?,?)"
+				+ "where id=?";
 	}
 
 }

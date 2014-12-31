@@ -5,12 +5,14 @@ import java.util.List;
 import repositories.IRepository;
 import repositories.impl.EmployeeBuilder;
 import repositories.impl.EmployeeRepository;
+import unitofwork.IUnitOfWork;
+import unitofwork.UnitOfWork;
 import domain.Employee;
 
 public class Main {
 		
 		public static void main(String[] args) {
-			String url ="jdbc:hsqldb:hsql://localhost/workdb";
+			String url ="jdbc:hsqldb:hsql://localhost/";
 		
 			
 			Employee jnowak = new Employee();
@@ -21,6 +23,7 @@ public class Main {
 			{
 				EmployeeBuilder ebuilder = new EmployeeBuilder();
 				Connection connection = DriverManager.getConnection(url);
+				IUnitOfWork uow = new UnitOfWork(connection);
 				/*
 				  String createTable =
 				 
@@ -32,7 +35,7 @@ public class Main {
 				Statement stmt = connection.createStatement();
 				stmt.executeUpdate(createTable);
 				*/
-				IRepository<Employee> employees = new EmployeeRepository(connection, ebuilder);
+				IRepository<Employee> employees = new EmployeeRepository(connection, ebuilder, uow);
 				employees.save(jnowak);
 				List<Employee> EmployeesFromDb = employees.getAll();
 				

@@ -3,35 +3,23 @@ package repositories.impl;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import unitofwork.IUnitOfWork;
 import domain.Person;
 
 public class PersonRepository 
 	extends Repository<Person>
 {
-
-	private String insertSql=
-			"INSERT INTO person(name,surname,pesel) VALUES(?,?,?)";
-	
-	private String updateSql=
-			"UPDATE person SET (name,surname,pesel)=(?,?,?) WHERE id=?";
-	
-	public PersonRepository(Connection connection, IEntityBuilder<Person> builder) {
-		super(connection, builder);
-	}
-	
-	@Override
-	protected String getTableName() {
-		return "person";
+	protected PersonRepository(Connection connection,
+			IEntityBuilder<Person> builder, IUnitOfWork uow) {
+		super(connection, builder, uow);
 	}
 
 	@Override
-	protected String getInsertQuery() {
-		return insertSql;
-	}
-
-	@Override
-	protected String getUpdateQuery() {
-		return updateSql;
+	protected void setUpUpdateQuery(Person entity) throws SQLException {
+		update.setString(1, entity.getName());
+		update.setString(2, entity.getSurname());
+		update.setString(3, entity.getPesel());
+		update.setInt(4, entity.getId());
 	}
 
 	@Override
@@ -42,12 +30,21 @@ public class PersonRepository
 	}
 
 	@Override
-	protected void setUpUpdateQuery(Person entity) throws SQLException {
-		update.setString(1, entity.getName());
-		update.setString(2, entity.getSurname());
-		update.setString(3, entity.getPesel());
-		update.setInt(4, entity.getId());
+	protected String getTableName() {
+		return "person";
 	}
+
+	@Override
+	protected String getUpdateQuery() {
+		return "update person set (name,surname,pesel)=(?,?,?)"
+				+ "where id=?";
+	}
+
+	@Override
+	protected String getInsertQuery() {
+		return "insert into person(name,surname,pesel) values(?,?,?)";
+	}
+	
 }
 	
 	
