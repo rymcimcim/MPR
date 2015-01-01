@@ -32,7 +32,7 @@ public class EmployeeRepository extends Repository<Employee>{
 
 	@Override
 	protected String getInsertQuery() {
-		return "insert into emploee(salary,bonus) values(?,?)";
+		return "insert into employee(salary,bonus) values(?,?)";
 	}
 
 	@Override
